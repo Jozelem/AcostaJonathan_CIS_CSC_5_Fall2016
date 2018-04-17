@@ -41,75 +41,73 @@ int main(int argc, char** argv) {
     cin>>choice;
     //loop the menu
     do{
-        //Map/Process Inputs to Outputs
-        if (choice>='1'&&choice<='5'){
-            switch(choice){
-                case '1':{
-                    cout<<"Input the Answer to the following addition problem"<<endl;
-                    cout<<setw(5)<<op1<<endl;
-                    cout<<"+ "<<setw(3)<<op2<<endl;
-                    cout<<"-----"<<endl;
-                    correct=op1+op2;
-                    cout<<((correct>1000)?" ":"  ");
-                    cin>>stuAns;
-                    //Display Outputs
-                    if(stuAns==correct)cout<<"Your Answer is correct";
-                    else cout<<"Your Answer is wrong, the correct answer is "
-                            <<correct<<endl;
-                    break;
-                }
-                case '2':{
-                    cout<<"Input the Answer to the following subtraction problem"<<endl;
-                    cout<<setw(5)<<op1<<endl;
-                    cout<<"- "<<setw(3)<<op2<<endl;
-                    cout<<"-----"<<endl;
+    //Map/Process Inputs to Outputs
+        switch(choice){
+            case '1':{
+                cout<<"Input the Answer to the following addition problem"<<endl;
+                cout<<setw(5)<<op1<<endl;
+                cout<<"+ "<<setw(3)<<op2<<endl;
+                cout<<"-----"<<endl;
+                correct=op1+op2;
+                cout<<((correct>1000)?" ":"  ");
+                cin>>stuAns;
+                //Display Outputs
+                if(stuAns==correct)cout<<"Your Answer is correct";
+                else cout<<"Your Answer is wrong, the correct answer is "
+                        <<correct<<endl;
+                break;
+            }
+            case '2':{
+                cout<<"Input the Answer to the following subtraction problem"<<endl;
+                cout<<setw(5)<<op1<<endl;
+                cout<<"- "<<setw(3)<<op2<<endl;
+                cout<<"-----"<<endl;
 
-                    //Map/Process Inputs to Outputs
-                    correct=op1-op2;
-                    cout<<((correct>1000)?" ":"  ");
-                    cin>>stuAns;
-                    //Display Outputs
-                    if(stuAns==correct)cout<<"Your Answer is correct";
-                    else cout<<"Your Answer is wrong, the correct answer is "
-                            <<correct<<endl;
-                    break;
-                }
-                case '3':{
-                    cout<<"Input the Answer to the following Multiplication problem"<<endl;
-                    cout<<setw(5)<<op1<<endl;
-                    cout<<"* "<<setw(3)<<op2<<endl;
-                    cout<<"-----"<<endl;
+                //Map/Process Inputs to Outputs
+                correct=op1-op2;
+                cout<<((correct>1000)?" ":"  ");
+                cin>>stuAns;
+                //Display Outputs
+                if(stuAns==correct)cout<<"Your Answer is correct";
+                else cout<<"Your Answer is wrong, the correct answer is "
+                        <<correct<<endl;
+                break;
+            }
+            case '3':{
+                cout<<"Input the Answer to the following Multiplication problem"<<endl;
+                cout<<setw(5)<<op1<<endl;
+                cout<<"* "<<setw(3)<<op2<<endl;
+                cout<<"-----"<<endl;
 
-                    //Map/Process Inputs to Outputs
-                    correct=op1*op2;
-                    cout<<((correct>1000)?" ":"  ");
-                    cin>>stuAns;
-                    //Display Outputs
-                    if(stuAns==correct)cout<<"Your Answer is correct";
-                    else cout<<"Your Answer is wrong, the correct answer is "
-                            <<correct<<endl;
-                    break;
-                }
-                case '4':{
-                    cout<<"Input the Answer to the following division problem"<<endl;
-                    cout<<setw(5)<<op1<<endl;
-                    cout<<"/ "<<setw(3)<<op2<<endl;
-                    cout<<"-----"<<endl;
+                //Map/Process Inputs to Outputs
+                correct=op1*op2;
+                cout<<((correct>1000)?" ":"  ");
+                cin>>stuAns;
+                //Display Outputs
+                if(stuAns==correct)cout<<"Your Answer is correct";
+                else cout<<"Your Answer is wrong, the correct answer is "
+                        <<correct<<endl;
+                break;
+            }
+            case '4':{
+                cout<<"Input the Answer to the following division problem"<<endl;
+                cout<<setw(5)<<op1<<endl;
+                cout<<"/ "<<setw(3)<<op2<<endl;
+                cout<<"-----"<<endl;
 
-                    //Map/Process Inputs to Outputs
-                    correct=op1/op2;
-                    cout<<((correct>1000)?" ":"  ");
-                    cin>>stuAns;
-                    //Display Outputs
-                    if(stuAns==correct)cout<<"Your Answer is correct";
-                    else cout<<"Your Answer is wrong, the correct answer is "
-                            <<correct<<endl;
-                    break;
-                }
-                case '5':{
-                    cout<<"The application will be closing now"<<endl;
-                    break;
-                }
+                //Map/Process Inputs to Outputs
+                correct=op1/op2;
+                cout<<((correct>1000)?" ":"  ");
+                cin>>stuAns;
+                //Display Outputs
+                if(stuAns==correct)cout<<"Your Answer is correct";
+                else cout<<"Your Answer is wrong, the correct answer is "
+                        <<correct<<endl;
+                break;
+            }
+            case '5':{
+                cout<<"The application will be closing now"<<endl;
+                break;
             }
         }
     }while(choice>='1'&&choice<='4');   
