@@ -69,10 +69,10 @@ int main(int argc, char** argv) {
             case 8:english+=" Eighty";break;
             case 7:english+=" Seventy";break;
             case 6:english+=" Sixty";break;
-            case 5:english+="";break;
-            case 4:english+="";break;
+            case 5:english+=" Fifty";break;
+            case 4:english+=" Forty";break;
             case 3:english+=" Thirty";break;
-            case 2:english+="";break;
+            case 2:english+=" Twenty";break;
             case 1:english+=" Ten";break;
         }
     }
@@ -82,10 +82,10 @@ int main(int argc, char** argv) {
             case 8:english+=" Eighteen";break;
             case 7:english+=" Seventeen";break;
             case 6:english+=" Sixteen";break;
-            case 5:english+="";break;
+            case 5:english+=" FifTeen";break;
             case 4:english+=" Fourteen";break;
             case 3:english+=" Thirteen";break;
-            case 2:english+="";break;
+            case 2:english+=" Twelve";break;
             case 1:english+=" Eleven";break;
         }
     }
