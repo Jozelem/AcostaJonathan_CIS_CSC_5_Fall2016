@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Jonathan Acosta
- * Created on May 1, 2018, 11:42 AM
+ * Created on May 1st, 2018, 11:42 AM
  * Purpose: CPP Template
  *          To be copy for every project
  */
@@ -19,13 +19,17 @@ using namespace std; //namespace I/O stream library created
 unsigned char cnvDay(string);
 unsigned char cnvMnth(string);
 bool isLpYr(unsigned short);
+char gtCntVl(unsigned int);
+char gtYrVal(unsigned int);
+char gtMnVal(char, unsigned int);
+string dyOfWk(char, char, unsigned int);
 
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables
     string sMonth,sDay;
     unsigned short year;//2 Byte Integer Value
-    unsigned char day,month;//1 Byte Integet value
+    unsigned char day,month;//1 Byte Integer value
     
     //Initial Variables
     cout<<"This program outputs the day of the week"<<endl;
@@ -36,24 +40,47 @@ int main(int argc, char** argv) {
     //Map/Process Inputs to Outputs
     day=cnvDay(sDay);
     month=cnvMnth(sMonth);
-    int cntLpYr=0;
-    for(int year=1600;year<=2000;year++){
-        cout<<year<<" "<<(isLpYr(year)?'T':'F')<<endl;
-        if(isLpYr(year))cntLpYr++;
-    }
-    cout<<"Number of Leap Yrs = "<<cntLpYr<<endl;
+    
     //Display Outputs
     cout<<"The date is "
             <<static_cast<int>(month)<<"/"
             <<static_cast<int>(day)<<"/"<<year<<endl;
     
-    
     //Exit Program!
     return 0;
 }
 
+char gtMnVal(char month, unsigned int year){
+    switch(month){
+        case 1:{
+            if(isLpYr(year))return 6;
+            return 0;
+        }
+        case 2:{
+           if(isLpYr(year))return 2;
+            return 3; 
+        }
+        case 3:case 11:{return 3;}
+        case 4:case 7:{return 6;}
+        case 5:{return 1;}
+        case 6:{return 4;}
+        case 8:{return 2;}
+        case 9:case 12:{return 5;}
+        case 10:{return 0;}
+    }
+}
+
+char gtYrVal(unsigned int year){
+    return year%100+(year%100)/4;
+}
+
+char gtCntVl(unsigned int year){
+    year/=100;
+    return 2*(3-year%4);
+}
+
 bool isLpYr(unsigned short year){
-    return ((year%400==0)||((year%4==0)&&(!(year%100=00))));
+    return ((year%400==0)||((year%4==0)&&(!(year%100==0))));
 }
 
 unsigned char cnvMnth(string sMonth){
