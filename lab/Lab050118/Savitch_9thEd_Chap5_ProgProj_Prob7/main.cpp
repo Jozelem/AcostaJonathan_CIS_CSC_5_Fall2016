@@ -2,8 +2,7 @@
  * File:   main.cpp
  * Author: Jonathan Acosta
  * Created on May 1st, 2018, 11:42 AM
- * Purpose: CPP Template
- *          To be copy for every project
+ * Purpose: 
  */
 
 //system Libraries
@@ -40,14 +39,34 @@ int main(int argc, char** argv) {
     //Map/Process Inputs to Outputs
     day=cnvDay(sDay);
     month=cnvMnth(sMonth);
+    cout<<year<<"Is Leap year? -> "<<(isLpYr(year)?"True":"False")<<endl;
+    cout<<"Century Value = "<<static_cast<int>(gtCntVl(year))<<endl;
+    cout<<"Year Value= "<<static_cast<int>(gtYrVal(year))<<endl;
+    cout<<"Month Value = "<<static_cast<int>(gtMnVal(month,year))<<endl;
     
     //Display Outputs
     cout<<"The date is "
             <<static_cast<int>(month)<<"/"
             <<static_cast<int>(day)<<"/"<<year<<endl;
+    cout<<"The day of the week = "
+            <<dyOfWk(month,day,year)<<endl;
     
     //Exit Program!
     return 0;
+}
+
+string dyOfWk(char month, char day, unsigned int year){
+    int weekDay=(day+gtMnVal(month,year)+gtYrVal(year)+gtCntVl(year));
+    weekDay%=7;
+    switch(weekDay){
+        case 0:return "Sunday";
+        case 1:return "Monday";
+        case 2:return "Tuesday";
+        case 3:return "Wednesday";
+        case 4:return "Thursday";
+        case 5:return "Friday";
+    }
+    return "Saturday";
 }
 
 char gtMnVal(char month, unsigned int year){
@@ -75,8 +94,8 @@ char gtYrVal(unsigned int year){
 }
 
 char gtCntVl(unsigned int year){
-    year/=100;
-    return 2*(3-year%4);
+    int century=year/100;
+    return 2*(3-century%4);
 }
 
 bool isLpYr(unsigned short year){
